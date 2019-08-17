@@ -93,13 +93,7 @@ gtdMap <- joinCountryData2Map( mm, nameJoinColumn="country", joinCode="NAME" )
 mapCountryData( gtdMap, nameColumnToPlot='value', catMethod='fixedWidth',colourPalette=colourPalette, numCats=9,mapTitle=paste("Percentage of international students in",i))
 #dev.off()
 }
-View(times)
 View(cwur)
-View(cwur)
-View(cwur)
-View(times)
-View(times)
-View(times)
 View(times)
 View(exp)
 cwurCount <- cwur %>% group_by(country) %>% summarise(count=n()) %>% arrange(count) %>% tail(23)
@@ -126,11 +120,7 @@ labs(x="Count",y="Country") +
 ggtitle("Countries by Number of Ranked Universities")
 p1
 View(times)
-View(times)
 View(cwur)
-View(cwur)
-View(cwur)
-View(times)
 p1 <- ggplot(cwurCount,
 aes(x=reorder(country, -count), y=count, fill=country)) +
 geom_bar(stat="identity") +
@@ -305,7 +295,6 @@ theme(legend.position="none") +
 labs(x="Count",y="Country") +
 ggtitle("Countries by Number of Ranked Universities")
 p1
-p1
 p1 <- ggplot(cwurCount,
 aes(x=reorder(country, count), y=count, fill=country)) +
 geom_col(position = "stack") +
@@ -360,7 +349,6 @@ coord_flip() +
 theme(legend.position="bottom") +
 labs(x="Count",y="Country") +
 ggtitle("Countries by Number of Ranked Universities")
-p1
 p1
 p1 <- ggplot(cwurCount,
 aes(x=-reorder(-country, count), y=count, fill=country)) +
